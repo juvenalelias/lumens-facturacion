@@ -1,32 +1,33 @@
 package com.co.lumens.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.util.UriComponentsBuilder;
+import org.springframework.web.bind.annotation.RestController;
 
-import com.co.lumens.entities.Factura;
-import com.co.lumens.service.IFacturaService;
+import com.co.lumens.service.FacturaMqSender;
 
-@Controller
-@RequestMapping("user")
+@RestController("/facturamq")
 public class FacturaController {
-	@Autowired
-	private IFacturaService facturaService;
 	
-	@PostMapping("factura")
-	public Factura addFactura(@RequestBody Factura factura, UriComponentsBuilder builder) {
-		Factura fact = facturaService.crearFactura(factura);
-        /*if (flag == false) {
-        	return new ResponseEntity<Void>(HttpStatus.CONFLICT);
-          }
-                HttpHeaders headers = new HttpHeaders();
-                headers.setLocation(builder.path("/article/{id}").buildAndExpand(article.getArticleId()).toUri());
-                return new ResponseEntity<Factura>(headers, HttpStatus.CREATED);*/
-		return fact;
+	@Autowired
+	private FacturaMqSender facturaService;
+	
+	@PostMapping("/send")
+	public ResponseEntity<String> addFactura(String factura) {
+		
+		facturaService.sendMessage(factura);
+       
+		return new ResponseEntity<String>(factura, HttpStatus.OK);
 	}
+	
+	@GetMapping("/get")
+	public ResponseEntity<String> getFactura() {
+		
+		return new ResponseEntity<String>("hola mundo", HttpStatus.OK);
+	}
+
 
 }

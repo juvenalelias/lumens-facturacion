@@ -1,8 +1,7 @@
 package com.co.lumens.entities;
 
 import java.sql.Date;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -21,67 +20,71 @@ public class Factura {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-	
 	private long noFactura;
 	private long idCliente;
 	private double valor;
-	
-//	@Temporal(TemporalType.TIMESTAMP)	
 	private Date fecha;
 	
-	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<FacturaDetalle> items = new ArrayList<>();
-		 
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="factura")
+	private Set<FacturaDetalle> facturaDetalle;
+
 	public long getId() {
 		return id;
 	}
-	
+
 	public void setId(long id) {
 		this.id = id;
+	}
+
+	public long getIdCliente() {
+		return idCliente;
+	}
+
+	public void setIdCliente(long idCliente) {
+		this.idCliente = idCliente;
+	}
+
+	public double getValor() {
+		return valor;
+	}
+
+	public void setValor(double valor) {
+		this.valor = valor;
+	}
+
+	public Date getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
+	}
+
+	public Set<FacturaDetalle> getFacturaDetalle() {
+		return facturaDetalle;
+	}
+
+	public void setFacturaDetalle(Set<FacturaDetalle> facturaDetalle) {
+		this.facturaDetalle = facturaDetalle;
 	}
 	
 	public long getNoFactura() {
 		return noFactura;
 	}
-	
+
 	public void setNoFactura(long noFactura) {
 		this.noFactura = noFactura;
 	}
-	
-	public long getIdCliente() {
-		return idCliente;
-	}
-	
-	public void setIdCliente(long idCliente) {
+		 
+	public Factura(long noFactura, long idCliente, double valor, Date fecha){
 		this.idCliente = idCliente;
-	}
-	
-	//@JsonGetter
-	public double getValor() {
-		return valor;
-	}
-	
-	//@JsonSetter
-	public void setValor(double valor) {
 		this.valor = valor;
-	}
-	
-	//@JsonGetter
-	public Date getFecha() {
-		return fecha;
-	}
-	
-	//@JsonSetter
-	public void setFecha(Date fecha) {
 		this.fecha = fecha;
+		this.noFactura = noFactura;
 	}
-
-	public List<FacturaDetalle> getFacturas() {
-		return items;
+	
+	public Factura(){
 	}
-
-	public void setFacturas(List<FacturaDetalle> facturas) {
-		this.items = facturas;
-	}
+	
 	
 }

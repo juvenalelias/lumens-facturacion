@@ -10,6 +10,8 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "factura_detalle")
+//@JsonIgnoreProperties({"id"})
+//@JsonIgnoreProperties(ignoreUnknown = true)
 public class FacturaDetalle {
 	
 	@Id
@@ -22,9 +24,12 @@ public class FacturaDetalle {
 	private long valorUnit;
 	private long iva;
 	
-	@ManyToOne(targetEntity=Factura.class)
+	
+	@ManyToOne
     @JoinColumn(name="id_factura")
-    Factura factura;
+//	@JsonBackReference
+//	@JsonProperty("Factura")
+    private Factura factura;
 	
 	public long getId() {
 		return id;
@@ -81,5 +86,4 @@ public class FacturaDetalle {
 	public void setFactura(Factura factura) {
 		this.factura = factura;
 	}
-	
 }
