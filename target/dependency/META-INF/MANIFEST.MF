@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Implementation-Title: Lumens Facturacion
 Implementation-Version: 0.1.0
 Archiver-Version: Plexus Archiver
-Built-By: USUARIO
+Built-By: root
 Implementation-Vendor-Id: co.com.lumens
 Spring-Boot-Version: 1.5.10.RELEASE
 Implementation-Vendor: Pivotal Software, Inc.

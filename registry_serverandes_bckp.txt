@@ -1,0 +1,95 @@
+{
+  "status": 200,
+  "docs": [
+    {
+      "appName": "microservicio1",
+      "hostName": "172.24.101.91",
+      "port": 30183,
+      "service": "/microservicio1",
+      "method": "GET",
+      "_id": "80XhvqfmT6pLrXa0"
+    },
+    {
+      "appName": "microservicio2",
+      "hostName": "172.24.101.95",
+      "port": 32429,
+      "service": "/microservicio2",
+      "method": "GET",
+      "_id": "F7fdixJBIvKSI7Fv"
+    },
+    {
+      "appName": "facturaDetalle",
+      "hostName": "172.24.101.91",
+      "port": 32382,
+      "service": "/",
+      "method": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "_id": "Wnxpdm1m87F7NHAv"
+    },
+    {
+      "appName": "microsvinsumos",
+      "hostName": "172.24.101.94",
+      "port": 32644,
+      "service": "/microsvinsumos",
+      "method": "GET",
+      "_id": "aSbAAn6p3d7UAHW8"
+    },
+    {
+      "appName": "microservicio1",
+      "hostName": "172.24.101.95",
+      "port": 30183,
+      "service": "/microservicio1",
+      "method": "GET",
+      "_id": "b4R4iC8alWNXDA9d"
+    },
+    {
+      "appName": "factura",
+      "hostName": "172.24.101.91",
+      "port": 32382,
+      "service": "/",
+      "method": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "_id": "hBwVHZhajDjVQ6Hu"
+    },
+    {
+      "appName": "factura",
+      "hostName": "172.24.101.91",
+      "port": 32382,
+      "service": "/",
+      "method": "GET",
+      "_id": "qVpHnTbUW3ll9QeB"
+    },
+    {
+      "appName": "microservicio2",
+      "hostName": "172.24.101.95",
+      "port": 32429,
+      "service": "/microservicio2",
+      "method": "GET",
+      "_id": "x5Z3rq7ElwJ8AwJC"
+    },
+    {
+      "appName": "microservicio2",
+      "hostName": "172.24.101.91",
+      "port": 32429,
+      "service": "/microservicio2",
+      "method": "GET",
+      "_id": "yUDsf2cvO662bq82"
+    },
+    {
+      "appName": "microservicio1",
+      "hostName": "172.24.101.91",
+      "port": 30183,
+      "service": "/microservicio1",
+      "method": "GET",
+      "_id": "zIiiwCjRtCPpsalc"
+    }
+  ]
+}
